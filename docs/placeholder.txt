@@ -1,0 +1,1 @@
+The docs folder holds all of your CSV, TXT, and JSON files
