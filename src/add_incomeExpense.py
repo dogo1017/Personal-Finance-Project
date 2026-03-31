@@ -1,6 +1,5 @@
 #IC 1st income and expense 
-#remember to import csv
-# and os
+#remember to import csv and os
 
 # all of this gets defined into a function called income and expense 
         #asking user if they want to 1.d income/expense or 2. view total or 3 return to menu 
