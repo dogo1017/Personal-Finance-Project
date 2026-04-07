@@ -13,6 +13,7 @@ def log_in(username,password):
     correct = False
     for i in information:
         if f_password == i["password"]:
-            return True
+            if i["username"] == username:
+                return True
         else:
             return False
