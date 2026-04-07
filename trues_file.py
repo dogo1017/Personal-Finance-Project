@@ -1,7 +1,24 @@
 # TE 2nd Personal Financial Calculator (True's Part)
 #Import Libraries
+import os
 
+#Notes
+# 1. Define the folder path and file name
+#Code:
+folder = "docs"
+filename = "data.csv"
 
+#Notes:
+# 2. Ensure the directory exists
+#if not os.path.exists(folder):
+    #os.makedirs(folder)
+
+# 3. Join the path and write the file
+#full_path = os.path.join(folder, filename)
+#with open(full_path, "w") as f:
+    #f.write("Writing to a specific folder.")
+
+#Code:
 #Savings Goal Function
 def savings_goal():
     #While True
@@ -24,10 +41,12 @@ def savings_goal():
             #Display It will take you {length} months to reach your savings goal.
             print(f"It will take you {length} months to reach your savings goal.")
                 #save savings_goal, monthly, and length into CSV file
-            with open("docs\\data.csv", "a") as file:
-                file.write(savings_goal)
-                file.write(monthly)
-                file.write(length)
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+            full_path = os.path.join(folder, filename)
+            with open(full_path, "a") as f:
+                f.write(f"\nSavings Goal: ${savings_goal}\nMonthly Savings: ${monthly}\nTime it Will Take to Reach Goal: {length} Months\n")
+
         #Also If savings_goal is set to 2
         elif savings_choice == "2":
             #If savings_goal == None
@@ -44,7 +63,6 @@ def savings_goal():
             print("Running Menu, add this later.")
 
 savings_goal()
-
 
 #Budget Function
     #While True
