@@ -6,8 +6,11 @@
 def savings_goal():
     #While True
         #Display 1. Set new savings goal
+        print("1. Set new savings goal")
         #Display 2. View savings goal
+        print("2. View savings goal")
         #Display 3. Return to menu
+        print("3. Return to menu")
         #savings_choice is set to an input asking the user to choose 1-3
         savings_choice = input("Choose 1-3: ")
         #If savings_choice is set to 1
@@ -15,22 +18,28 @@ def savings_goal():
             #savings_goal is set to a user float input asking them to enter a savings goal
             savings_goal = float(input("Enter a savings goal: "))
             #monthly is set to a user integer input asking them how much money they want to save per month
-            monthly = int(input("How much money do you want to save per month: "))
+            monthly = float(input("How much money do you want to save per month: "))
             #length = savings_goal/monthly
+            length = savings_goal/monthly
             #Display It will take you {length} months to reach your savings goal.
+            print(f"It will take you {length} months to reach your savings goal.")
                 #save savings_goal, monthly, and length into CSV file
             with open("docs\\data.csv", "a") as file:
-                file.write(content)
+                file.write(savings_goal)
+                file.write(monthly)
+                file.write(length)
         #Also If savings_goal is set to 2
-        elif savings_goal == "2":
+        elif savings_choice == "2":
             #If savings_goal == None
+            if savings_goal == "":
                 #Display You need to make a savings goal first
+                print("You need to make a savings goal first.")
             #Else:
             else:
                 #Open savings_goal from CSV file
                 print("File opened (add this later).")
         #Also If savings_goal is set to 3
-        elif savings_goal == "3":
+        elif savings_choice == "3":
                 #Run menu
             print("Running Menu, add this later.")
 
