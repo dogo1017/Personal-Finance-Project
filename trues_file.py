@@ -22,6 +22,7 @@ filename = "data.csv"
 #Savings Goal Function
 def savings_goal():
     #While True
+    while True:
         #Display 1. Set new savings goal
         print("1. Set new savings goal")
         #Display 2. View savings goal
@@ -45,7 +46,7 @@ def savings_goal():
                 os.makedirs(folder)
             full_path = os.path.join(folder, filename)
             with open(full_path, "a") as f:
-                f.write(f"\nSavings Goal: ${savings_goal}\nMonthly Savings: ${monthly}\nTime it Will Take to Reach Goal: {length} Months\n")
+                f.write(f"\nSavings Goal: ${savings_goal}, Monthly Savings: ${monthly}, Time it Will Take to Reach Goal: {length} Months\n")
 
         #Also If savings_goal is set to 2
         elif savings_choice == "2":
