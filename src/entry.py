@@ -3,7 +3,7 @@ import csv
 import os
 import login
 import user_registration
-DB_FILE = "extra/group_project_stuff/users.csv"
+DB_FILE = "docs/users.csv"
 MIN_PASSWORD_LENGTH = 5
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("dark-blue")
@@ -56,13 +56,12 @@ class App(ctk.CTk):
         elif len(password) < MIN_PASSWORD_LENGTH:
             self.show_error(f"Password must be > {MIN_PASSWORD_LENGTH} chars", 4)
             has_error = True
-
         if has_error: return
 
         users = user_registration.load_csv()
         if self.current_mode == "login":
             if login.log_in(username,password):
-                print("Logged in successfully!")
+                return(username)
             else:
                 self.show_error("Invalid username or password", 7)
         else:
