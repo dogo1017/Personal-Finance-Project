@@ -1,4 +1,12 @@
-Username, Savings Goal, Monthly Savings, Time it Will Take to Reach Goal
+Savings Goals, Monthly Savings, Time it Will Take to Reach Goal
 
-Savings Goal: $<function savings_goal at 0x702f5e7d22a0>, Monthly Savings: $1000.0, Time it Will Take to Reach Goal: 10.0 Months
-Budget Limit: $1000.0, Expenses: $10.0
+
+10000.0, 1000.0, 10.0
+
+3000.0, 300.0, 10.0
+
+4000.0, 12.12, 330.03300330033005
+
+1e+94, 12000000.0, 8.333333333333334e+86
+
+9.0, 0.01, 900.0
