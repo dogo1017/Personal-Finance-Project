@@ -1,5 +1,3 @@
-# login.py
-
 import hashlib
 import user_registration
 import os
