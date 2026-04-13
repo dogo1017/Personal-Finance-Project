@@ -1,19 +1,30 @@
-Name of your project
-![Image of code while running](location of image in folders) Paragraph description of project
+# Personal Finance Project
+***
+Our personal finance project uses a GUI (using custom Tkinter) with a main menu
+where you can use various widgets to do different tasks. These tasks include managing income and expenses,
+budgeting, making savings goals, currency converter, and a charts display. All of the information is then saved in
+a CSV file.
 
-How to use
-Step by step instructions
-Detailing how to run your project #. Including a list of any library that needs downloaded!
-Details on Project Features
-All key features in yout repository with a detailed description
-This list frequently will include emojis
-Installation Instructions
-Not being used in this class BUT if you have a full run file (.exe) for your project, this is where setup instructions go!
+## How to use
+***
+1. Run project.
+2. If libraries aren't installed the program will automatically download them.
+3. Use the menu to use different widgets.
+4. Exit by clicking the X in the program screen.
 
-License
-Anything made for schools has no copyright
+## Details on Project features
+***
+- Classes
+- Functions
+- CSV files
+- Custom Tkinter
+- Password hashing
 
-Contributors
-Github usernames for ALL members of the group
-Contribute
-Not being used for this class. Instructions on how to submit changes if project is open source
+## Lisence
+***
+Anything made for school has no copyright
+
+## Contributors
+- Douglas London
+- True Eggleston
+- Isabella Cowdell
