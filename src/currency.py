@@ -2,20 +2,48 @@ import customtkinter as ctk
 
 RATES = {
     "USD": 1.0,
-    "EUR": 0.92,
-    "GBP": 0.79,
-    "JPY": 149.50,
-    "CAD": 1.36,
-    "MXN": 17.15,
+    "EUR": 0.8557,
+    "JPY": 159.80,
+    "GBP": 0.7449,
+    "CNY": 6.83,
+    "AUD": 1.4221,
+    "CAD": 1.3852,
+    "CHF": 0.7903,
+    "HKD": 7.8320,
+    "SGD": 1.2735,
+    "INR": 93.07,
+    "KRW": 1485.0,
+    "SEK": 10.65,
+    "MXN": 17.38,
+    "NZD": 1.7461,
+    "NOK": 9.73,
+    "TWD": 31.85,
+    "BRL": 5.0323,
+    "ZAR": 16.90,
+    "PLN": 3.98
 }
 
 CURRENCY_NAMES = {
     "USD": "US Dollar",
     "EUR": "Euro",
-    "GBP": "British Pound",
     "JPY": "Japanese Yen",
+    "GBP": "British Pound",
+    "CNY": "Chinese Yuan",
+    "AUD": "Australian Dollar",
     "CAD": "Canadian Dollar",
+    "CHF": "Swiss Franc",
+    "HKD": "Hong Kong Dollar",
+    "SGD": "Singapore Dollar",
+    "INR": "Indian Rupee",
+    "KRW": "South Korean Won",
+    "SEK": "Swedish Krona",
     "MXN": "Mexican Peso",
+    "NZD": "New Zealand Dollar",
+    "NOK": "Norwegian Krone",
+    "TWD": "New Taiwan Dollar",
+    "BRL": "Brazilian Real",
+    "ZAR": "South African Rand",
+    "PLN": "Polish Zloty"
 }
 
 def convert(amount, from_currency, to_currency):
