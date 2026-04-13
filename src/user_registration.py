@@ -1,33 +1,47 @@
 import hashlib
 import csv
+import os
 
-def register(users,password,username):
-    usernames = []
-    for user in users:
-        usernames.append(user["username"])
-    password_encoded = password.encode("utf-8")
-    hashed_password = hashlib.shake_128(password_encoded)
-    hex_password = hashed_password.hexdigest(4)
-    users.append({"username" : username, "password" : hex_password})
+def hash_password(password):
+    mixer = hashlib.shake_128()
+    mixer.update(password.encode("utf-8"))
+    return mixer.hexdigest(4)
+
+def register(users, password, username):
+    hex_password = hash_password(password)
+    users.append({"username": username, "password": hex_password})
     return users
 
 def load_csv():
+    os.makedirs("docs", exist_ok=True)
+    if not os.path.exists("docs/users.csv"):
+        with open("docs/users.csv", "w", newline="") as f:
+            csv.writer(f).writerow(["username", "password"])
     with open("docs/users.csv", "r") as user_list:
         content = csv.reader(user_list)
-        row_count = sum(1 for row in content)
-        user_list.seek(0)
-        if row_count == 0:
-            headers = ["username", "password"]
-        else:
-            headers = next(content)
-        rows = []
-        for line in content:
-            rows.append({headers[0] : line[0], headers[1] : line[1]})
-        return rows
-    
+        rows_raw = list(content)
+    if len(rows_raw) <= 1:
+        return []
+    headers = rows_raw[0]
+    rows = []
+    for line in rows_raw[1:]:
+        if len(line) >= 2:
+            rows.append({headers[0]: line[0], headers[1]: line[1]})
+    return rows
+
+def username_exists(username):
+    users = load_csv()
+    for user in users:
+        if user["username"] == username:
+            return True
+    return False
+
 def save_changes(users):
-    feildnames = ["username", "password"]
-    with open("docs/users.csv", "w", newline = "") as user_list:
-        writer = csv.DictWriter(user_list, fieldnames = feildnames)
+    fieldnames = ["username", "password"]
+    with open("docs/users.csv", "w", newline="") as user_list:
+        writer = csv.DictWriter(user_list, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(users)
+
+def init_user_folder(username):
+    os.makedirs(f"docs/{username}", exist_ok=True)

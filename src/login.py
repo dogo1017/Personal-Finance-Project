@@ -1,17 +1,9 @@
-import hashlib
 import user_registration
-import os
 
-# Function for logging in
-def log_in(username,password):
+def log_in(username, password):
     information = user_registration.load_csv()
-    mixer = hashlib.shake_128()
-    mixer.update(password.encode('utf-8'))
-    f_password = str(mixer.hexdigest(4))
-    correct = False
-    for i in information:
-        if f_password == i["password"]:
-            if i["username"] == username:
-                return True
-        else:
-            return False
+    hashed = user_registration.hash_password(password)
+    for user in information:
+        if user["username"] == username and user["password"] == hashed:
+            return True
+    return False
