@@ -1,5 +1,6 @@
 # Personal Finance Project
 ***
+![Code while running.](image.png)
 Our personal finance project uses a GUI (using custom Tkinter) with a main menu
 where you can use various widgets to do different tasks. These tasks include managing income and expenses,
 budgeting, making savings goals, currency converter, and a charts display. All of the information is then saved in
