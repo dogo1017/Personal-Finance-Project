@@ -14,13 +14,13 @@ def initialize_file(username):
             writer.writerow(["Type", "Date", "Amount", "Source", "Category"])
 
 def add_entry(username, entry_type, date, amount, source, category):
-    path = get_expense_file(username)
+    path = f"{get_expense_file(username)}"
     with open(path, mode="a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([entry_type, date, amount, source, category])
 
 def load_entries(username):
-    path = get_expense_file(username)
+    path = f"{get_expense_file(username)}"
     if not os.path.exists(path):
         return []
     with open(path, newline="") as file:
